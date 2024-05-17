@@ -5,20 +5,23 @@ import authService from "../../appwrite/auth"
 import Input from '../Input'
 import Button from '../Button'
 import {Logo} from '../index'
+import { useDispatch } from 'react-redux'
+import { login as authLogin } from "../../features/authSlice"
 
 const Login = () => {
   const navigate = useNavigate()
   const { register, handleSubmit }  = useForm()
   const [error, setError] = useState("")
+  const dispatch = useDispatch()
 
   const login = async (data) => {
     setError("")
     try {
       const session = await authService.login(data);
-      // Just ckecking...
       if (session) {
         const userData = await authService.getCurrentUser();
         if (userData) {
+          dispatch(authLogin(userData))
           navigate("/")
         }
       }
