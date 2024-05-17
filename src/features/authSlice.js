@@ -10,20 +10,17 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-        console.log('Login reducer called with payload:', action.payload);
       state.status = true;
       state.userData = action.payload;
-      console.log("state : ", state.userData);
     },
 
-    logout: (state, action) => {
-        console.log('Logout reducer called');
+    logout: (state) => {
       state.status = false;
       state.userData = null;
     },
   },
 });
 
-export const { login, logout } = authSlice.actions
+export const { login, logout } = authSlice.actions;
 
-export default authSlice.reducer
+export default authSlice.reducer;

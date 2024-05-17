@@ -6,6 +6,7 @@ import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import Logo from "./Logo";
 import ExpenseForm from "./expense-form/ExpenseForm";
+import ExpenseCard from "./ExpenseCard"
 
 export {
     Header,
@@ -15,5 +16,6 @@ export {
     Login,
     Signup,
     Logo,
-    ExpenseForm
+    ExpenseForm,
+    ExpenseCard
 }

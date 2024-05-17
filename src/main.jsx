@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { Home, Signup, Login, AddExpense, EditExpense } from "./pages"
-import store from "./store/store.js"
+import { Home, Signup, Login, AddExpense, EditExpense, AllExpenses, Expense } from "./pages"
+import {store, persistor} from "./store/store.js"
 import { Provider } from 'react-redux'
+import { PersistGate } from "redux-persist/integration/react";
 
 const router = createBrowserRouter([
   {
@@ -30,9 +31,17 @@ const router = createBrowserRouter([
         element: <AddExpense />
       },
       {
-        path: "edit-expense",
+        path: "edit-expense/:slug",
         element: <EditExpense />
-      }
+      },
+      {
+        path: "expense/:slug",
+        element: <Expense />
+      },
+      {
+        path: "all-expense",
+        element: <AllExpenses />
+      },
     ]
   }
 ])
@@ -40,7 +49,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-    <RouterProvider router={router} />
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
 )
