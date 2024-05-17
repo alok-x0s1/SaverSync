@@ -6,7 +6,7 @@ import Input from '../Input'
 import Button from '../Button'
 import {Logo} from '../index'
 import { useDispatch } from 'react-redux'
-import { login as authLogin } from "../../features/authSlice"
+import { login as authLogin } from '../../features/authSlice'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -20,6 +20,7 @@ const Login = () => {
       const session = await authService.login(data);
       if (session) {
         const userData = await authService.getCurrentUser();
+        console.log('User data fetched:', userData);
         if (userData) {
           dispatch(authLogin(userData))
           navigate("/")
