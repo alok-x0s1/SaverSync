@@ -1,23 +1,17 @@
-import { Outlet } from 'react-router-dom'
-import './App.css'
-import { Footer, Header } from './components'
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import { Footer, Header } from "./components";
 
 function App() {
-
   return (
     <>
-      <nav>
-        <Header />
-      </nav>
-      <main>
+      <Header />
+      <main className="bg-primary-bg-color">
         <Outlet />
       </main>
-      <footer>
-        <p>© 2021 100% Free</p>
-        <Footer />
-      </footer>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

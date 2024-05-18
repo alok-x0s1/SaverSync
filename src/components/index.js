@@ -7,6 +7,7 @@ import Signup from "./Auth/Signup";
 import Logo from "./Logo";
 import ExpenseForm from "./expense-form/ExpenseForm";
 import ExpenseCard from "./ExpenseCard"
+import Container from "./container/Container";
 
 export {
     Header,
@@ -17,5 +18,6 @@ export {
     Signup,
     Logo,
     ExpenseForm,
-    ExpenseCard
+    ExpenseCard,
+    Container
 }

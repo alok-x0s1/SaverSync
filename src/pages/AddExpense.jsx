@@ -1,12 +1,14 @@
-import React from 'react'
-import { ExpenseForm } from '../components'
+import React from "react";
+import { Container, ExpenseForm } from "../components";
 
 const AddExpense = () => {
   return (
-    <div className='py-8'>
+    <div className="py-8 w-full min-h-screen flex justify-center items-center">
+      <Container>
         <ExpenseForm />
+      </Container>
     </div>
-  )
-}
+  );
+};
 
-export default AddExpense
+export default AddExpense;

@@ -68,8 +68,11 @@ const ExpenseForm = ({ post }) => {
   }, [watch, setValue, slugTransform]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-      <div className="flex flex-col justify-center">
+    <form
+      onSubmit={handleSubmit(submit)}
+      className="flex flex-wrap justify-center"
+    >
+      <div className="flex flex-col justify-center border-secondary-color border p-8 rounded-md text-primary-color">
         <div className="px-2">
           <Input
             label="Title :"
